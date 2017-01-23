@@ -1,0 +1,22 @@
+{
+  "name": "workflow",
+  "description": "Atividade Work Flow do curso de certificação bootstrap",
+  "main": "index.js",
+  "authors": [
+    "Lucivan Oliveira"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Atvidade",
+    "Workflow",
+    "bootstrap"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "description": "Atividade Work Flow do curso de certificação bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Atvidade",
+    "Workflow",
+    "bootstrap"
+  ],
+  "author": "Lucivan Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-htmlmin": "^3.0.0"
+  }
+}

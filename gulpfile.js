@@ -1,28 +1,18 @@
-var gulp = require("gulp");
-var cleanCSS = require('gulp-clean-css');
-var htmlmin = require('gulp-htmlmin');
-
-/*TASK PARA MOVER ARQUIVOS CSS*/
-gulp.task('mover-css', function(){
-	return gulp.src('./source/scss/*.scss')
-		.pipe(gulp.dest('./dist/css/'));
-	});
+var gulp 			= require("gulp");
+var sass 			= require("gulp-sass");
+var cleanCSS 	= require("gulp-clean-css");
+var htmlmin 	= require("gulp-htmlmin");
 
 /*TASK PARA MINIFICAR ARQUIVOS CSS*/
 gulp.task('mini-css', function() {
-    return gulp.src('./source/scss/*.scss')
-        .pipe(cleanCSS({debug: true}, function(details) {
-            console.log(details.name + ': ' + details.stats.originalSize);
-            console.log(details.name + ': ' + details.stats.minifiedSize);
-        }))
-        .pipe(gulp.dest('./dist/css'));
-	});
-
-/*TASK PARA MOVER ARQUIVOS HTML*/
-gulp.task('mover-html', function(){
-	return gulp.src('./source/*.html')
-		.pipe(gulp.dest('./dist'));
-	});
+  return gulp.src('./source/scss/*.scss')
+		.pipe(sass())
+    .pipe(cleanCSS({debug: true}, function(details) {
+        console.log(details.name + ': ' + details.stats.originalSize);
+        console.log(details.name + ': ' + details.stats.minifiedSize);
+    }))
+    .pipe(gulp.dest('./dist/css'));
+});
 
 /*TASK PARA MINIFICAR ARQUIVOS HTML*/
 gulp.task('mini-html', function() {
@@ -32,8 +22,8 @@ gulp.task('mini-html', function() {
 });
 
 /*TASK MONITORAR ARQUIVOS*/
-gulp.task('back', function(){
-	gulp.watch('./source/index.html',['mover-html', 'mini-html']);
-	gulp.watch('./source/scss/*.scss',['mover-css', 'mini-css']);
-	});
+gulp.task('default', function(){
+	gulp.watch('./source/index.html',['mini-html']);
+	gulp.watch('./source/scss/*.scss',['mini-css']);
+});
 
